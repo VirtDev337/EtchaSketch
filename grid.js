@@ -40,7 +40,8 @@ function activateListeners() {
             event.target.classList.add("active");
         
             if (color != "rainbow") {
-                event.target.classList.add("active");
+                // event.target.classList.add("active");
+                event.target.style.backgroundColor = color;
             } else {
                 event.target.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
             }
