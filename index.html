@@ -5,10 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Etch-A-Sketch</title>
+        <link rel="stylesheet" href="style.css">
     </head>
+    <script src="jscolor.js"></script>
     <body>
         <center>
-            <div class="spacer"><img src=""></div>
+            <div class="selection">
+                <button id="size" data-size="size" class="size">Size</button>
+                <button id="color-changer" data-jscolor="{onChange: 'modifyColorByColorTableChoice(this)'}">Color</button>
+                <button id="rainbow" data-color="rainbow" class="color">Rainbow</button>
+                <button id="reset" class="reset" onclick="reset()">Reset</button>
+            </div>
             <div class="container">
                 <div class="grid"></div>
             </div>
