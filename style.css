@@ -1,8 +1,13 @@
 :root {
-    --element-height * 1px;
-    --element-width * 1px;
-    --grid-height * 1px;
-    --grid-width * 1px;
+    --element-height: 1px;
+    --element-width: 1px;
+    --grid-height: 1px;
+    --grid-width: 1px;
+    --default-active-bg-color: blue;
+    --element-active-bg-color: var(--default-active-bg-color);
+    --element-bg-color: slategrey;
+    --button-bg-color: darkblue;
+    --button-tooltip-message: "tooltip";
 }
 
 *, ::before, ::after {
@@ -14,17 +19,29 @@
 body {
     display: flex;
     justify-content: center;
+    background: black;
 }
 
-.spacer {
-    display: hidden;
-    margin: 200px auto;
+button {
+    margin: 30px 15px;
+    padding: 0 5px;
+    scale: 1.2;
+}
+
+button:hover{
+    background-color: var(--button-bg-color);
+    border: 1px solid blue;
+}
+
+.selection {
     display: block;
-    font-size: 1000px;
+    margin: 100px auto;
+    font-size: 10px;
     height: 50px;
 }
 
 .container {
+    margin: 0 auto 5rem 30rem;
     justify-content: center;
     align-items: center;
 }
@@ -36,13 +53,17 @@ body {
     grid-template-columns: repeat(var(--element-height), 1rem);
     grid-template-rows: repeat(var(--element-width), 1rem);
     grid-gap: 0;
-    background-color: black;
 }
 
 .grid-item {
-    background-color: transparent;
+    background-color: var(--element-bg-color);
+    height: var(--element-height);
+    width: var(--element-width);
+    border: 1px solid black;
+    display: inline-block;
+    marginTop: -6px;
 }
 
 .active {
-    background-color: fuchsia;
+    background-color: var(--element-active-bg-color);
 }
